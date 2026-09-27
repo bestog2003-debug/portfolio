@@ -723,15 +723,9 @@ try {
 
 try {
 
-    const EMAILJS_PUBLIC_KEY =
-        "TON_PUBLIC_KEY";
-
-    const EMAILJS_SERVICE_ID =
-        "TON_SERVICE_ID";
-
-    const EMAILJS_TEMPLATE_ID =
-        "TON_TEMPLATE_ID";
-
+    const EMAILJS_PUBLIC_KEY = "CIUMjb_yh_WzuGOf";
+const EMAILJS_SERVICE_ID = "service_j5siahp";
+const EMAILJS_TEMPLATE_ID = "template_yV0va8j";
 
     const contactForm =
         document.getElementById("contact-form");
