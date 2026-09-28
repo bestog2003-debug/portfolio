@@ -802,13 +802,11 @@ const EMAILJS_TEMPLATE_ID = "template_mczpcrj";
                 })
 
                 .catch((error) => {
-
-                    console.error(error);
-
-                    if (formMessage) {
-                        formMessage.textContent =
-                            "❌ Une erreur est survenue. Réessayez.";
-                    }
+  console.error("EmailJS error:", error);
+  if (formMessage) {
+    formMessage.textContent = "❌ Erreur : " + (error.text || error.message || error);
+  }
+});
 
                 });
 
