@@ -725,8 +725,7 @@ try {
 
     const EMAILJS_PUBLIC_KEY = "CIUMjb_yh_WzuGOf";
 const EMAILJS_SERVICE_ID = "service_j5siahp";
-const EMAILJS_TEMPLATE_ID = "template_yV0va8j";
-
+const EMAILJS_TEMPLATE_ID = "template_mczpcrj";
     const contactForm =
         document.getElementById("contact-form");
 
