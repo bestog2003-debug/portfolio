@@ -430,20 +430,26 @@ try {
    PRELOADER
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
 
-    const preloader = document.getElementById("preloader");
-
-    if (preloader) {
-
-        setTimeout(() => {
-            preloader.classList.add("hide");
-        }, 300);
-
+    function cacherPreloader() {
+        const preloader = document.getElementById("preloader");
+        if (preloader) preloader.classList.add("hide");
     }
 
-});
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(cacherPreloader, 300);
+        });
+    } else {
+        // La page est déjà prête : on n'attend pas un événement passé
+        setTimeout(cacherPreloader, 300);
+    }
 
+    // Sécurité : quoi qu'il arrive, le site s'affiche après 3 secondes
+    setTimeout(cacherPreloader, 3000);
+
+})();
 /* =====================================================
    CURSEUR PERSONNALISÉ
 ===================================================== */
