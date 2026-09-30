@@ -430,29 +430,19 @@ try {
    PRELOADER
 ===================================================== */
 
-try {
+document.addEventListener("DOMContentLoaded", () => {
 
-    window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
 
-        const preloader =
-            document.getElementById("preloader");
+    if (preloader) {
 
-        if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add("hide");
+        }, 300);
 
-            setTimeout(() => {
+    }
 
-                preloader.classList.add("hide");
-
-            }, 700);
-
-        }
-
-    });
-
-} catch (err) {
-    console.error("Erreur preloader :", err);
-}
-
+});
 
 /* =====================================================
    CURSEUR PERSONNALISÉ
