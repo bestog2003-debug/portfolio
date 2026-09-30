@@ -31,9 +31,34 @@
     >
 
     <!-- CSS -->
+     <meta name="description" content="OGOUWALE Christiano, développeur web à Cotonou (Bénin). Création de sites vitrines, applications web et optimisation. Découvrez mes projets.">
+<meta name="theme-color" content="#050d1a">
+
+<!-- Favicon (règle l'erreur 404 de la console) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+<!-- Aperçu du lien sur WhatsApp, LinkedIn, Facebook -->
+<meta property="og:title" content="OGOUWALE Christiano | Développeur Web">
+<meta property="og:description" content="Sites modernes, rapides et responsives.">
+<meta property="og:image" content="https://bestog2003-debug.github.io/portfolio/images/projet1.png">
+<meta property="og:url" content="https://bestog2003-debug.github.io/portfolio/">
+<meta property="og:type" content="website">
+
+<!-- Données structurées pour Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "OGOUWALE Christiano",
+  "jobTitle": "Développeur Web",
+  "url": "https://bestog2003-debug.github.io/portfolio/",
+  "sameAs": ["https://github.com/Christiano-og"]
+}
+</script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="scroll-progress"></div>
 
     <!-- ================= PRELOADER ================= -->
 
@@ -754,8 +779,8 @@
             >
 
                 <img
-                    src="images/projet1.png"
-                    alt="Projet Portfolio"
+                    src="images/projet1.png" 
+                    alt="Projet Portfolio" loading="lazy" decoding="async">
                 >
 
                 <div class="project-content">
@@ -807,7 +832,7 @@
 
                 <img
                     src="images/projet2.png"
-                    alt="Gestionnaire de tâches"
+                    alt="Gestionnaire de tâches" loading="lazy" decoding="async">
                 >
 
                 <div class="project-content">
@@ -856,7 +881,7 @@
 
                 <img
                     src="images/projet3.png"
-                    alt="Site entreprise"
+                    alt="Site entreprise" loading="lazy" decoding="async">
                 >
 
                 <div class="project-content">
@@ -1183,6 +1208,7 @@
                     placeholder="Votre message"
                     required
                 ></textarea>
+                <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
 
                 <button
                     type="submit"
@@ -1268,5 +1294,7 @@
         if (p) p.classList.add("hide");
       }, 3000);
     </script>
+    
+
 </body>
 </html>
