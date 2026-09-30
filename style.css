@@ -1539,3 +1539,8 @@ footer p {
     }
 
 }
+/* Si AOS n'a pas démarré, on montre tout le contenu */
+html:not(.aos-ready) [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+}
