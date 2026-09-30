@@ -8,6 +8,7 @@ try {
         once: true,
         offset: 100
     });
+    document.documentElement.classList.add("aos-ready");
 } catch (err) {
     console.error("Erreur AOS :", err);
 }
