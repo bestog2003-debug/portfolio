@@ -753,6 +753,10 @@ const EMAILJS_TEMPLATE_ID = "template_mczpcrj";
             function(event) {
 
                 event.preventDefault();
+                                
+
+                // Anti-spam : un robot remplit le champ caché
+                if (contactForm.website && contactForm.website.value) return;
 
 
                 if (typeof emailjs === "undefined") {
@@ -816,4 +820,60 @@ const EMAILJS_TEMPLATE_ID = "template_mczpcrj";
 
 } catch (err) {
     console.error("Erreur formulaire de contact :", err);
+}
+
+/* =====================================================
+   MENU ACTIF + BARRE DE PROGRESSION
+===================================================== */
+
+try {
+
+    const sections = document.querySelectorAll("section[id]");
+    const liens = document.querySelectorAll(".nav-links a");
+
+    if ("IntersectionObserver" in window && sections.length) {
+
+        const navObserver = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    liens.forEach(lien => {
+                        lien.classList.toggle(
+                            "active-link",
+                            lien.getAttribute("href") === "#" + entry.target.id
+                        );
+                    });
+
+                }
+
+            });
+
+        }, { rootMargin: "-40% 0px -55% 0px" });
+
+        sections.forEach(section => navObserver.observe(section));
+
+    }
+
+    const barre = document.getElementById("scroll-progress");
+
+    if (barre) {
+
+        window.addEventListener("scroll", () => {
+
+            const hauteur =
+                document.documentElement.scrollHeight - window.innerHeight;
+
+            const pourcentage =
+                hauteur > 0 ? (window.scrollY / hauteur) * 100 : 0;
+
+            barre.style.width = pourcentage + "%";
+
+        }, { passive: true });
+
+    }
+
+} catch (err) {
+    console.error("Erreur menu actif :", err);
 }
