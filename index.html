@@ -1252,14 +1252,21 @@
     </button>
 
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js" defer></script>
 
     <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
+    <!-- Sécurité : le preloader disparaît après 3 s quoi qu'il arrive -->
+    <script>
+      setTimeout(function () {
+        var p = document.getElementById("preloader");
+        if (p) p.classList.add("hide");
+      }, 3000);
+    </script>
 </body>
 </html>
