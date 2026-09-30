@@ -1544,3 +1544,55 @@ html:not(.aos-ready) [data-aos] {
     opacity: 1 !important;
     transform: none !important;
 }
+/* Preloader : masqué complètement */
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Barre de progression du scroll */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background: #00e5ff;
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+
+/* Lien du menu actif */
+.nav-links a.active-link {
+    color: #00e5ff;
+}
+
+/* Champ anti-spam invisible */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Pas de faux curseur sur téléphone et tablette */
+@media (hover: none) {
+    .cursor, .cursor-dot { display: none; }
+}
+
+/* Respect des utilisateurs qui réduisent les animations */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus visible au clavier */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #00e5ff;
+    outline-offset: 3px;
+}
